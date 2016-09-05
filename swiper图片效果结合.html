@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="node_modules/swiper/dist/css/swiper.css">
+    <link rel="stylesheet" href="node_modules/swiper/dist/css/animate.min.css">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;}
+        html,body{height:100%;margin:0;overflow: hidden;}
+        .swiper-container{height:100%;}
+        img{width:50%;height:50%}
+        .red{background:red}
+        .blue{background:blue}
+        .green{background:green}
+        .yellow{background: yellow}
+        .black{background:black}
+        .swiper-slide{
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide red"><img class="ani" src="1.jpg"
+                                        swiper-animate-effect="bounceOutUp"
+                                        swiper-animate-duration="1s"
+                                        swiper-animate-delay="1s" />
+        </div>
+        <div class="swiper-slide blue"><img class="ani" src="2.jpg"
+                                       swiper-animate-effect="shake"
+                                       swiper-animate-duration="1s"
+                                       swiper-animate-delay="1s"/>
+        </div>
+        <div class="swiper-slide black"><img class="ani" src="3.jpg"
+                                       swiper-animate-effect="shake"
+                                       swiper-animate-duration="1s"
+                                       swiper-animate-delay="1s"/>
+        </div>
+        <div class="swiper-slide green"><img class="ani" src="4.jpg"
+                                       swiper-animate-effect="shake"
+                                       swiper-animate-duration="1s"
+                                       swiper-animate-delay="1s"/>
+        </div>
+        <div class="swiper-slide yellow"><img class="ani" src="5.jpg"
+                                       swiper-animate-effect="shake"
+                                       swiper-animate-duration="1s"
+                                       swiper-animate-delay="1s"/>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-scrollbar"></div>
+</div>
+
+<script src="node_modules/swiper/dist/js/swiper.min.js"></script>
+<script src="node_modules/swiper/dist/js/swiper.animate1.0.2.min.js"></script>
+<script>
+    new Swiper(".swiper-container",{
+        /*effect : 'cube',
+        cube: {
+            slideShadows: true,
+            shadow: true,
+            shadowOffset: 100,
+            shadowScale: 0.6
+        },*/
+        onInit:function(swiper){
+            swiperAnimateCache(swiper);
+            swiperAnimate(swiper);
+        },
+        onSlideChangeEnd:function(swiper){
+            swiperAnimate(swiper);
+        },
+        scrollbar:".swiper-scrollbar",
+        direction:"horizontal",
+        nextButton:".swiper-button-next",
+        prevButton:".swiper-button-prev",
+        pagination:".swiper-pagination"
+    })
+</script>
+</body>
+</html>
+</body>
+</html>

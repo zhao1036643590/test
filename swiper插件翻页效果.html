@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="node_modules/swiper/dist/css/swiper.css">
+    <script src="node_modules/swiper/dist/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="node_modules/swiper/dist/css/animate.min.css">
+    <script src="node_modules/swiper/dist/js/swiper.animate1.0.2.min.js"></script>
+    <title></title>
+    <style>
+        html,body{height:100%;margin:0;overflow: hidden;}
+        .swiper-container{height:100%;width:100%;}
+
+        img{width:100%;height:100%;}
+    </style>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="1.jpg"/></div>
+        <div class="swiper-slide"><img src="2.jpg"/></div>
+        <div class="swiper-slide"><img src="3.jpg"/></div>
+        <div class="swiper-slide"><img src="4.jpg"/></div>
+        <div class="swiper-slide"><img src="5.jpg"/></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-scrollbar"></div>
+</div>
+<script>
+    new Swiper(".swiper-container",{
+        effect : 'cube',
+        cube: {
+            slideShadows: true,
+            shadow: true,
+            shadowOffset: 100,
+            shadowScale: 0.6
+        },
+        scrollbar:".swiper-scrollbar",
+        direction:"horizontal",
+        loop:true,
+        nextButton:".swiper-button-next",
+        prevButton:".swiper-button-prev",
+        pagination:".swiper-pagination"
+    })
+</script>
+</body>
+</html>

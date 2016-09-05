@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="node_modules/swiper/dist/css/swiper.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        *{margin:0;padding:0;}
+        html,body{height: 100%;}
+        .swiper-container{height:100%;width:100%;}
+        div{text-align: center;font-size: 50px;}
+        .red{background:red}
+        .green{background:green}
+        .yellow{background:yellow}
+        .orange{background:orange}
+        .form-control{width:70%;margin: 0 auto;}
+        .list-group-item{font-size:20px;}
+    </style>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide red">Page-1</div>
+        <div class="swiper-slide yellow">Page-2</div>
+        <div class="swiper-slide green">Page-3</div>
+        <div class="swiper-slide">
+            <form action="">
+                <div class="form-group">
+                    <lable for="username" style="font-size:16px;">username</lable>
+                    <input type="text" class="form-control" name="username" placeholder="username"/>
+                <div class="form-group">
+                        <lable for="password" style="font-size:16px;">password</lable>
+                        <input type="text" class="form-control" name="password" placeholder="password"/></div>
+                </div>
+                <button class="btn btn-danger">提交</button>
+            </form>
+        </div>
+        <div class="swiper-slide orange">
+            <ul class="list-group">
+                <li class="list-group-item">list-group-item-1</li>
+                <li class="list-group-item">list-group-item-2</li>
+                <li class="list-group-item">list-group-item-3</li>
+                <li class="list-group-item">list-group-item-4</li>
+                <li class="list-group-item">list-group-item-5</li>
+                <li class="list-group-item">list-group-item-6</li>
+                <li class="list-group-item">list-group-item-7</li>
+                <li class="list-group-item">list-group-item-8</li>
+                <li class="list-group-item">list-group-item-9</li>
+                <li class="list-group-item">list-group-item-10</li>
+                <li class="list-group-item">list-group-item-11</li>
+                <li class="list-group-item">list-group-item-12</li>
+                <li class="list-group-item">list-group-item-13</li>
+                <li class="list-group-item">list-group-item-14</li>
+                <li class="list-group-item">list-group-item-15</li>
+                <li class="list-group-item">list-group-item-16</li>
+                <li class="list-group-item">list-group-item-17</li>
+                <li class="list-group-item">list-group-item-18</li>
+                <li class="list-group-item">list-group-item-19</li>
+                <li class="list-group-item">list-group-item-20</li>
+                <li class="list-group-item">list-group-item-21</li>
+                <li class="list-group-item">list-group-item-22</li>
+                <li class="list-group-item">list-group-item-23</li>
+                <li class="list-group-item">list-group-item-24</li>
+                <li class="list-group-item">list-group-item-25</li>
+                <li class="list-group-item">list-group-item-26</li>
+                <li class="list-group-item">list-group-item-27</li>
+                <li class="list-group-item">list-group-item-28</li>
+                <li class="list-group-item">list-group-item-29</li>
+                <li class="list-group-item">list-group-item-30</li>
+            </ul>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-scrollbar"></div>
+</div>
+<script src="node_modules/swiper/dist/js/swiper.min.js"></script>
+<script src="node_modules/iscroll/build/iscroll-probe.js"></script>
+<script>
+    var myswiper=new Swiper(".swiper-container",{
+        direction:"horizontal",
+        /*loop:true,*/
+        scrollbar:".swiper-scrollbar",
+        pagination:".swiper-pagination",
+        nextButton:".swiper-button-next",
+        prevButton:".swiper-button-prev"
+    })
+    var is=new IScroll(".orange",{
+        probeType:5,
+        mouseWheel:true
+    })
+    var index=0;
+    is.on("scroll",function(){
+        if(this.y>100){
+            index=this.y;
+        }
+    });
+    document.addEventListener("touchmove",function(e){e.preventDefault()},false);
+    is.on("scrollEnd",function(){
+        if(index>100){
+            console.log("刷新");
+            document.querySelector("ul").innerHTML =
+                    "<li class='list-group-item'>"+ Math.random() +"</li>"+
+                    "<li class='list-group-item'>"+ Math.random() +"</li>"+
+                    "<li class='list-group-item'>"+ Math.random() +"</li>"+
+                    "<li class='list-group-item'>"+ Math.random() +"</li>"+
+                    "<li class='list-group-item'>"+ Math.random() +"</li>"+
+                    "<li class='list-group-item'>"+ Math.random() +"</li>"+
+                    "<li class='list-group-item'>"+ Math.random() +"</li>";
+        }
+    })
+</script>
+</body>
+</html>
